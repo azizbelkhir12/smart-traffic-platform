@@ -1,0 +1,38 @@
+<div class="location-panel">
+
+  <h2>Plan your route</h2>
+
+  <div class="location-field">
+    <label>Departure</label>
+
+    <p *ngIf="departure; else noDeparture">
+      {{ departure.lat | number:'1.4-4' }},
+      {{ departure.lng | number:'1.4-4' }}
+    </p>
+
+    <ng-template #noDeparture>
+      <p class="placeholder">Click on the map to select departure</p>
+    </ng-template>
+  </div>
+
+  <div class="location-field">
+    <label>Destination</label>
+
+    <p *ngIf="destination; else noDestination">
+      {{ destination.lat | number:'1.4-4' }},
+      {{ destination.lng | number:'1.4-4' }}
+    </p>
+
+    <ng-template #noDestination>
+      <p class="placeholder">Click on the map to select destination</p>
+    </ng-template>
+  </div>
+
+  <button
+    type="button"
+    (click)="resetSelection()"
+    [disabled]="!departure && !destination">
+    Reset selection
+  </button>
+
+</div>

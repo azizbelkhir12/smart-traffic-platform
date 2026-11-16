@@ -1,0 +1,21 @@
+<div class="app-container">
+
+  <h1>Smart Traffic Platform</h1>
+
+  <div class="navigation-layout">
+
+    <app-location-selector
+      [departure]="$any(departure)"
+      [destination]="$any(destination)"
+      (reset)="resetLocations()">
+    </app-location-selector>
+
+    <app-map
+      [departure]="$any(departure)"
+      [destination]="$any(destination)"
+      (locationSelected)="onLocationSelected($any($event))">
+    </app-map>
+
+  </div>
+
+</div>
