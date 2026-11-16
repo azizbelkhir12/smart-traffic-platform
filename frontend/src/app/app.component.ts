@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MapComponent } from './components/map/map.component';
+import { Location } from './models/location.model';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +8,17 @@ import { MapComponent } from './components/map/map.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
- departure: Location | null = null;
+  departure: Location | null = null;
   destination: Location | null = null;
 
   onLocationSelected(location: Location): void {
     if (!this.departure || this.destination) {
       this.departure = location;
       this.destination = null;
-    } else {
-      this.destination = location;
+      return;
     }
+
+    this.destination = location;
   }
 
   resetLocations(): void {

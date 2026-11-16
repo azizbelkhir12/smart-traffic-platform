@@ -1,21 +1,17 @@
 <div class="app-container">
 
-  <h1>Smart Traffic Platform</h1>
+  <app-map
+    [departure]="departure"
+    [destination]="destination"
+    (locationSelected)="onLocationSelected($event)">
+  </app-map>
 
-  <div class="navigation-layout">
-
+  <div class="floating-panel">
     <app-location-selector
-      [departure]="$any(departure)"
-      [destination]="$any(destination)"
+      [departure]="departure"
+      [destination]="destination"
       (reset)="resetLocations()">
     </app-location-selector>
-
-    <app-map
-      [departure]="$any(departure)"
-      [destination]="$any(destination)"
-      (locationSelected)="onLocationSelected($any($event))">
-    </app-map>
-
   </div>
 
 </div>

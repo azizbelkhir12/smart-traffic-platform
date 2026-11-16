@@ -35,7 +35,7 @@ export class MapComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.map = L.map(this.mapContainer.nativeElement, {
       center: [36.8065, 10.1815],
-      zoom: 12,
+      zoom: 14,
       zoomControl: true
     });
 
