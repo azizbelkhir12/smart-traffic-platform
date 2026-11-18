@@ -31,6 +31,23 @@ app-map {
   z-index: 1000;
 }
 
+.floating-panel {
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+}
+
+.route-status {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+}
+
+.route-status.error {
+  color: #b91c1c;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .floating-panel {

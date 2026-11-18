@@ -1,0 +1,25 @@
+.route-list {
+  margin-top: 12px;
+  padding: 18px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.route-list h3 {
+  margin: 0 0 14px;
+  font-size: 16px;
+}
+
+.route-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.route-item:last-child {
+  border-bottom: none;
+}

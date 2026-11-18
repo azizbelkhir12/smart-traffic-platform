@@ -1,1 +1,17 @@
-<p>route-list works!</p>
+<section class="route-list">
+  <h3>Available routes</h3>
+
+  <div
+    class="route-item"
+    *ngFor="let route of routes; let i = index">
+
+    <strong>Route {{ i + 1 }}</strong>
+
+    <span>
+      {{ route.distance }} km
+      ·
+      {{ route.duration }} min
+    </span>
+
+  </div>
+</section>

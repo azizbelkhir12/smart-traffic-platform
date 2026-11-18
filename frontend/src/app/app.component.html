@@ -3,15 +3,30 @@
   <app-map
     [departure]="departure"
     [destination]="destination"
+    [routes]="routes"
     (locationSelected)="onLocationSelected($event)">
   </app-map>
 
   <div class="floating-panel">
+
     <app-location-selector
       [departure]="departure"
       [destination]="destination"
       (reset)="resetLocations()">
     </app-location-selector>
-  </div>
 
+    <div class="route-status" *ngIf="loading">
+      Calculating routes...
+    </div>
+
+    <div class="route-status error" *ngIf="error">
+      {{ error }}
+    </div>
+
+    <app-route-list
+      *ngIf="routes.length > 0"
+      [routes]="routes">
+    </app-route-list>
+
+  </div>
 </div>
